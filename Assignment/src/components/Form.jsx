@@ -63,8 +63,9 @@ const Form = () => {
       setHobbies([]);
       alert("Data submitted successfully");
     }
+    console.log(formData);
 };
-console.log(formData);
+
 
   const handleHobby = (e) => {
     e.preventDefault();
