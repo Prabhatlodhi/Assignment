@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Form.css";
 
 const Form = () => {
@@ -11,10 +11,12 @@ const Form = () => {
   const [userHobby, setUserHobby] = useState("");
   //state for handling error part
   const [showUserError, setShowUserError] = useState(false);
-  const [ validHobby, setvalidHobby] = useState(false);
-
+  const [validHobby, setvalidHobby] = useState(false);
+  //setting dark mode & show hide hobby input box
   const [darkmode, setDarkMode] = useState(false);
-  // console.log(userHobby)
+  const [showHobbyInput, setshowHobbyInput] = useState(false);
+
+  //for storing the data-input by the user in Array
   const updateData = () => {
     const update = [
       ...formData,
@@ -28,8 +30,8 @@ const Form = () => {
     ];
     setformData(update);
   };
-  
 
+  // show error message if the username input field is empty
   function checkUserError() {
     setShowUserError(true);
     const timer = setTimeout(() => {
@@ -40,22 +42,24 @@ const Form = () => {
     };
   }
 
+  // show error message if the hobby input field is empty
   function checkValidHobby() {
     setvalidHobby(true);
     const hideHobbyError = setTimeout(() => {
-        setvalidHobby(false);
+      setvalidHobby(false);
     }, 1500);
     return () => {
-        hideHobbyError;
+      hideHobbyError;
     };
   }
 
+  //submit the data and perform input field check
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!username || username === "" || username.trim() === "") {
-        checkUserError();
+      checkUserError();
     } else if (hobbies.length === 0) {
-        checkValidHobby()
+      checkValidHobby();
       return;
     } else {
       updateData();
@@ -63,30 +67,39 @@ const Form = () => {
       setHobbies([]);
       alert("Data submitted successfully");
     }
+  };
+
+  useEffect(() => {
     console.log(formData);
-};
+  }, [formData]);
 
-
+  //submit the data and perform input field check for hobby
   const handleHobby = (e) => {
     e.preventDefault();
-    if (!username || username === "" || username.trim() === "") {
-        checkUserError();
+    if (!userHobby || userHobby === "" || userHobby.trim() === "") {
+      checkValidHobby();
       return;
-    } else if (userHobby === "") {
-        checkValidHobby()
-      return;
+    } else {
+      const updateHobby = [...hobbies, userHobby.trim()];
+      setHobbies(updateHobby);
+      setUserHobby("");
+      setshowHobbyInput(false);
     }
-    const updateHobby = [...hobbies, userHobby.trim()];
-    setHobbies(updateHobby);
-    setUserHobby("");
   };
 
   const handleAvailabilityChange = (event) => {
     setAvailability(event.target.value);
   };
 
+  //switch between light and dark mode
   const switchDarkmode = () => {
     setDarkMode(!darkmode);
+  };
+
+  //Add hobbies
+  const showHobbyInputtoggle = (e) => {
+    e.preventDefault();
+    setshowHobbyInput(!showHobbyInput);
   };
 
   return (
@@ -103,6 +116,7 @@ const Form = () => {
       <div className="top_empty_div"></div>
       <div className="form_wrapper">
         <form action="" onSubmit={handleSubmit}>
+          {/* username input field */}
           <div>
             <label htmlFor="username">
               <b>Username</b>
@@ -119,10 +133,11 @@ const Form = () => {
               <span className="error_message">Username cannot be empty*</span>
             )}
           </div>
+          {/* Country input field */}
           <div className="wrapper_radio_btn">
             <div>
               <label htmlFor="country">
-                <b>Country</b> 
+                <b>Country</b>
               </label>
               <br />
               <select
@@ -135,6 +150,7 @@ const Form = () => {
                 <option value="Japan">Japan</option>
               </select>
             </div>
+            {/* Availability radio button */}
             <div>
               <div className="radio_btn">
                 <span>
@@ -163,22 +179,31 @@ const Form = () => {
               </div>
             </div>
           </div>
+          {/* Hobbies input field */}
           <div>
-            <label htmlFor="hobby_input">
-              <b>Hobbies</b>{" "}
-            </label>
+            <div className="hobby_wrapper">
+              <label htmlFor="hobby_input">
+                <b>Hobbies</b>
+              </label>
+              <button className="plus_button" onClick={showHobbyInputtoggle}>
+                +
+              </button>
+            </div>
             <br />
-            <input
-              type="text"
-              id="hobby_input"
-              placeholder="Eg. Listening to Music"
-              value={userHobby}
-              onChange={(e) => setUserHobby(e.target.value)}
-            />
-            <button onClick={handleHobby}>Add </button>
-            {validHobby && (
-              <span className="error_message">Please enter hobby and press the {"Add"} button*</span>
+            {/* Hobby input field toggles */}
+            {showHobbyInput && (
+              <div>
+                <input
+                  type="text"
+                  id="hobby_input"
+                  placeholder="Eg. Listening to Music"
+                  value={userHobby}
+                  onChange={(e) => setUserHobby(e.target.value)}
+                />
+                <button onClick={handleHobby}>Add </button>
+              </div>
             )}
+            {/* rendering list of hobbied */}
             {hobbies.map((hobby, id) => {
               return (
                 <div key={id}>
@@ -187,6 +212,12 @@ const Form = () => {
                 </div>
               );
             })}
+            {/* Error message for hobby */}
+            {validHobby && (
+              <span className="error_message">
+                Please enter hobby and press the {"Add"} button*
+              </span>
+            )}
           </div>
           <button className="submit_btn">Submit</button>
         </form>

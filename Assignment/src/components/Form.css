@@ -140,6 +140,18 @@ b {
   font-size: 12px;
 }
 
+.hobby_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus_button{
+    width: 33px;
+    height: 33px;
+    font-size: 16px;
+    border-radius: 50%;
+}
 /*==== i pad mini ====*/
 @media (max-width: 769px) {
   .main_wrapper {
