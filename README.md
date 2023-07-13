@@ -8,13 +8,13 @@ Hello! 👋 I'm Prabhat, and I'm passionate about building user-friendly and vis
 
 ### Project Highlights
 
-- **User Input Capture: The userform is designed to capture various user inputs, including username, country selection, and multiple hobbies. Users can easily provide their information through the form.
+- User Input Capture: The userform is designed to capture various user inputs, including username, country selection, and multiple hobbies. Users can easily provide their information through the form.
 
-- **Engaging UI Design: Special attention has been given to creating an engaging and visually appealing user interface for the form. The design elements are carefully chosen to enhance the overall user experience.
+- Engaging UI Design: Special attention has been given to creating an engaging and visually appealing user interface for the form. The design elements are carefully chosen to enhance the overall user experience.
 
-- **Dark and Light Modes: The userform offers support for both dark and light modes. This feature allows users to customize the appearance of the form based on their preferences. With a simple click, users can seamlessly switch between the two modes.
+- Dark and Light Modes: The userform offers support for both dark and light modes. This feature allows users to customize the appearance of the form based on their preferences. With a simple click, users can seamlessly switch between the two modes.
 
-- **Responsive Design: The userform is optimized for different devices, including the iPad Mini and iPhone SE. It ensures that the form displays properly and is fully functional on these specific devices, providing a consistent user experience.
+- Responsive Design: The userform is optimized for different devices, including the iPad Mini and iPhone SE. It ensures that the form displays properly and is fully functional on these specific devices, providing a consistent user experience.
 
 ### Technologies Used
 
