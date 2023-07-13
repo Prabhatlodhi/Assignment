@@ -8,7 +8,7 @@ Netlify = https://userformprabhat.netlify.app/
 
 ## About Me
 
-Hello! 👋 I'm Prabhat, and I'm passionate about building user-friendly and visually appealing web applications. One of my recent projects is a userform that allows users to input their information and hobbies, with an amazing UI design and support for both dark and light modes.
+Hello! 👋 I'm Prabhat, one of my recent projects is a userform that allows users to input their information and hobbies, with an amazing UI design and support for both dark and light modes.
 
 ### Project Highlights
 
