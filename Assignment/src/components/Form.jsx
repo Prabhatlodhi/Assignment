@@ -17,7 +17,7 @@ const Form = () => {
       ...formData,
       {
         id: Math.round(Math.random() * 999999),
-        name: username,
+        name: username.trim(),
         country: country,
         availability: availability,
         hobbies: hobbies,
@@ -29,14 +29,14 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!username) {
+    if (!username || username === "" ) {
       alert("Name cannot be empty");
       return;
     } else if (!availability) {
       alert("Please select availabitity");
       return;
     } else if (hobbies.length === 0) {
-      alert("Please enter at least one hobby");
+      alert(`Please add anyone hobby by ${"Clicking"} on the ${"Add"} button`);
       return;
     }
     updateData();
@@ -47,7 +47,7 @@ const Form = () => {
 
   const handleHobby = (e) => {
     e.preventDefault();
-    if (!username) {
+    if (!username  ) {
       alert("Name cannot be empty");
       return;
     } else if (!availability) {
@@ -57,7 +57,7 @@ const Form = () => {
       alert("Please enter at least one hobby");
       return;
     }
-    const updateHobby = [...hobbies, userHobby];
+    const updateHobby = [...hobbies, userHobby.trim()];
     setHobbies(updateHobby);
     setUserHobby("");
   };
@@ -83,7 +83,7 @@ const Form = () => {
             <label htmlFor=""><b>Username</b></label><br />
             <input
               type="text"
-              placeholder="Please enter username..."
+              placeholder="Eg. John Doe"
               value={username}
               onChange={(e) => setUserName(e.target.value)}
             />
@@ -132,7 +132,7 @@ const Form = () => {
             <input 
               type="text"
               id="hobby_input"
-              placeholder="Enter Hobbies"
+              placeholder="Eg. Listen to Music"
               value={userHobby}
               onChange={(e) => setUserHobby(e.target.value)}
             />
