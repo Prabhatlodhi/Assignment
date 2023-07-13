@@ -88,7 +88,7 @@ const Form = () => {
               onChange={(e) => setUserName(e.target.value)}
             />
           </div>
-          <div className="ff" > 
+          <div className="wrapper_radio_btn" > 
           <div  >
             <label htmlFor=""><b>Country</b> </label><br />
             <select

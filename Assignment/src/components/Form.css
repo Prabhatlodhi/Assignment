@@ -13,8 +13,9 @@ input[type="text"],
 }
 
 #hobby_input {
-  width: 80%;
+  width: 82%;
 }
+
 button {
   height: 38px;
   padding: 3px 8px;
@@ -43,12 +44,10 @@ b {
 .form_wrapper {
   border: 1px solid red;
   padding: 50px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
+  margin: 60px auto;
   width: 30rem;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  position: relative;
+  z-index: 1000 !important;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px);
@@ -60,11 +59,17 @@ b {
 .main_wrapper {
   width: 100vw;
   height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   /* background-color: #85ffbd; */
   /* background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
 }
 
 .dark_mode {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -77,8 +82,8 @@ b {
   border-radius: 50%;
   background-color: #4158d0;
   position: absolute;
-  left: 900px;
-  top: 100px;
+  left: 940px;
+  top: 40px;
   background-image: linear-gradient(
     43deg,
     #4158d0 0%,
@@ -86,13 +91,14 @@ b {
     #ffcc70 100%
   );
 }
+
 .bottom_empty_div {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   position: absolute;
   left: 480px;
-  top: 510px;
+  top: 520px;
   background-color: #21d4fd;
   background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
 }
@@ -107,12 +113,118 @@ b {
   height: 80px;
   border-radius: 50%;
   position: relative;
-  top: 600px;
-  left: 1400px;
+  top: 85%;
+  left: 85%;
 }
 
-.ff {
+.wrapper_radio_btn {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0px;
+  margin: 20px 0px;
+}
+
+/*==== i pad mini ====*/
+@media (max-width: 769px) {
+  .main_wrapper {
+    width: 100vw;
+    height: 100vh;
+    
+     
+  }
+
+  .dark_mode {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    padding-top: 250px;
+  }
+
+  .form_wrapper { 
+    padding: 50px;
+    margin: 0px auto;
+    width: 30rem;
+    z-index: 1000; 
+  }
+
+  .top_empty_div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 520px;
+    top: 190px;
+  }
+  .bottom_empty_div {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    left: 90px;
+    top: 650px;
+  }
+  .darkmode_btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 00px;
+  }
+}
+
+/* i phone SE */
+@media (max-width: 376px) {
+  .main_wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0px 2px;
+  }
+
+  .dark_mode {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+  }
+
+  #hobby_input {
+    width: 80%;
+  }
+
+  .form_wrapper { 
+    padding: 15px;
+    margin: 150px auto;
+    width: 95%;
+  }
+
+  .top_empty_div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 250px;
+    top: 80px;
+  }
+  .bottom_empty_div {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 480px;
+  }
+  .darkmode_btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
 }
