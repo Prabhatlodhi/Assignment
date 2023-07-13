@@ -58,7 +58,7 @@ const Form = () => {
     e.preventDefault();
     if (!username || username === "" || username.trim() === "") {
       checkUserError();
-    } else if (hobbies.length === 0) {
+    } else if (hobbies.length === 0 || userHobby !== "") {
       checkValidHobby();
       return;
     } else {
@@ -74,7 +74,7 @@ const Form = () => {
   }, [formData]);
 
   //submit the data and perform input field check for hobby
-  const handleHobby = (e) => {
+  const submitHobbies = (e) => {
     e.preventDefault();
     if (!userHobby || userHobby === "" || userHobby.trim() === "") {
       checkValidHobby();
@@ -200,7 +200,7 @@ const Form = () => {
                   value={userHobby}
                   onChange={(e) => setUserHobby(e.target.value)}
                 />
-                <button onClick={handleHobby}>Add </button>
+                <button onClick={submitHobbies}>Add </button>
               </div>
             )}
             {/* rendering list of hobbied */}

@@ -48,7 +48,6 @@ b {
 /* =====GENERAL CSS=====*/
 
 .form_wrapper {
-  border: 1px solid red;
   padding: 50px;
   margin: 60px auto;
   width: 30rem;
@@ -65,24 +64,12 @@ b {
 .main_wrapper {
   width: 100vw;
   height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* background-color: #85ffbd; */
-  /* background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
 }
 
 .dark_mode {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    to top,
-    #0d103e,
-    #190a05
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0d103e, #190a05);
 
   color: white;
 }
@@ -140,17 +127,17 @@ b {
   font-size: 12px;
 }
 
-.hobby_wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hobby_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.plus_button{
-    width: 33px;
-    height: 33px;
-    font-size: 16px;
-    border-radius: 50%;
+.plus_button {
+  width: 33px;
+  height: 33px;
+  font-size: 16px;
+  border-radius: 50%;
 }
 /*==== i pad mini ====*/
 @media (max-width: 769px) {
