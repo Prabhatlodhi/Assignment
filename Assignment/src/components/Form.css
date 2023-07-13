@@ -1,30 +1,118 @@
 /* =====GENERAL CSS=====*/
 
-input[type="text"] {
-    width: 200px;
-    height: 25px;
-    padding-left: 5px;
+input[type="text"],
+#hobby_input {
+  width: 100%;
+  height: 38px;
+  height: 38px;
+  padding-left: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0px;
+  outline: 1px solid greenyellow;
 }
 
-button{
-    width: 60px;
-    height: 25px;
-    margin: 0px;
+#hobby_input {
+  width: 80%;
+}
+button {
+  height: 38px;
+  padding: 3px 8px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  margin-left: 20px;
+}
+
+select {
+  border: none;
+  outline: none;
+  height: 38px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+b {
+  font-size: 20px;
 }
 
 /* =====GENERAL CSS=====*/
 
+.form_wrapper {
+  border: 1px solid red;
+  padding: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
 .main_wrapper {
-    border: 1px solid red;
-    padding: 50px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #85ffbd; */
+  /* background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
 }
 
-.radio_btn {
-    border: 1px solid red; 
+.dark_mode {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
 }
 
+.top_empty_div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #4158d0;
+  position: absolute;
+  left: 900px;
+  top: 100px;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+.bottom_empty_div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 480px;
+  top: 510px;
+  background-color: #21d4fd;
+  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+}
+
+.submit_btn {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.darkmode_btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  top: 600px;
+  left: 1400px;
+}
+
+.ff {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}

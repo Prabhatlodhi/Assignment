@@ -9,6 +9,8 @@ const Form = () => {
 
   const [hobbies, setHobbies] = useState([]);
   const [userHobby, setUserHobby] = useState("");
+
+  const [darkmode, setDarkMode] = useState(false)
   // console.log(userHobby)
   const updateData = () => {
     const update = [
@@ -23,8 +25,7 @@ const Form = () => {
     ];
     setformData(update);
   };
-
-  console.log(formData);
+    console.log(formData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,22 +35,28 @@ const Form = () => {
     } else if (!availability) {
       alert("Please select availabitity");
       return;
-    }else if (hobbies.length === 0 ) {
-        alert("Please enter at least one hobby");
-        return;
-      }
+    } else if (hobbies.length === 0) {
+      alert("Please enter at least one hobby");
+      return;
+    }
     updateData();
     setUserName("");
-    setHobbies([])
+    setHobbies([]);
+    alert("Data submitted successfully");
   };
 
   const handleHobby = (e) => {
-      e.preventDefault()
-     if (userHobby === "") {
-        alert("Please enter at least one hobby");
-        return;
-      }
-
+    e.preventDefault();
+    if (!username) {
+      alert("Name cannot be empty");
+      return;
+    } else if (!availability) {
+      alert("Please select availabitity");
+      return;
+    } else if (userHobby === "") {
+      alert("Please enter at least one hobby");
+      return;
+    }
     const updateHobby = [...hobbies, userHobby];
     setHobbies(updateHobby);
     setUserHobby("");
@@ -59,58 +66,72 @@ const Form = () => {
     setAvailability(event.target.value);
   };
 
+  const switchDarkmode = ()=>{
+    setDarkMode(!darkmode)
+  }
+
   return (
-    <div className="main_wrapper">
-      <form action="" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="">Username :</label>
-          <input
-            type="text"
-            placeholder="Please enter username..."
-            value={username}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Country :</label>
-          <select
-            name="country"
-            id="country"
-            onChange={(e) => setCountry(e.target.value)}
-          >
-            <option value="India">India</option>
-            <option value="South Korea">South Korea</option>
-            <option value="Japan">Japan</option>
-          </select>
-        </div>
-        <div>
-          <span>Availability : </span>
-          <div className="radio_btn">
-            <label htmlFor="availability-yes"> Yes </label>
-            <input
-              type="radio"
-              id="availability-yes"
-              name="availability"
-              value="yes"
-              checked={availability === "yes"}
-              onChange={handleAvailabilityChange}
-            />
-            <label htmlFor="availability-no"> No </label>
-            <input
-              type="radio"
-              id="availability-no"
-              name="availability"
-              value="no"
-              checked={availability === "no"}
-              onChange={handleAvailabilityChange}
-            />
-          </div>
-        </div>
-        <div>
-          <label htmlFor="">Hobbies :</label>
+    <div className={darkmode ? 'dark_mode' : 'main_wrapper'}>
+    { darkmode ?
+        <button onClick={switchDarkmode} className="darkmode_btn" >Light Mode</button> : 
+        <button onClick={switchDarkmode} className="darkmode_btn" >Dark Mode</button>
+    }
+      <div className="top_empty_div"></div>
+      <div className="form_wrapper">
+        <form action="" onSubmit={handleSubmit}>
           <div>
+            <label htmlFor=""><b>Username</b></label><br />
             <input
               type="text"
+              placeholder="Please enter username..."
+              value={username}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
+          <div className="ff" > 
+          <div  >
+            <label htmlFor=""><b>Country</b> </label><br />
+            <select
+              name="country"
+              id="country"
+              onChange={(e) => setCountry(e.target.value)}
+            >
+              <option value="India">India</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Japan">Japan</option>
+            </select>
+          </div>
+          <div>
+            <div className="radio_btn">
+            <span><b>Availability</b> </span>
+              <div>
+              <label htmlFor="availability-yes"> Yes </label>
+              <input
+                type="radio"
+                id="availability-yes"
+                name="availability"
+                value="yes"
+                checked={availability === "yes"}
+                onChange={handleAvailabilityChange}
+              />
+              <label htmlFor="availability-no"> No </label>
+              <input
+                type="radio"
+                id="availability-no"
+                name="availability"
+                value="no"
+                checked={availability === "no"}
+                onChange={handleAvailabilityChange}
+              />
+              </div>
+            </div>
+          </div>
+          </div>
+          <div>
+            <label htmlFor=""><b>Hobbies</b> </label><br />
+            <input 
+              type="text"
+              id="hobby_input"
               placeholder="Enter Hobbies"
               value={userHobby}
               onChange={(e) => setUserHobby(e.target.value)}
@@ -125,9 +146,10 @@ const Form = () => {
               );
             })}
           </div>
-        </div>
-        <button>Submit</button>
-      </form>
+          <button className="submit_btn" >Submit</button>
+        </form>
+      </div>
+      <div className="bottom_empty_div"></div>
     </div>
   );
 };
