@@ -2,6 +2,10 @@ Netlify = https://userformprabhat.netlify.app/
 
 
 
+![Output](https://github.com/Prabhatlodhi/Assignment/assets/114669921/fd9952b7-57be-4130-9718-b4a732d8563d)
+
+ 
+
 ## About Me
 
 Hello! 👋 I'm Prabhat, and I'm passionate about building user-friendly and visually appealing web applications. One of my recent projects is a userform that allows users to input their information and hobbies, with an amazing UI design and support for both dark and light modes.
