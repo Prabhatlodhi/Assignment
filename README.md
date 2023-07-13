@@ -2,15 +2,23 @@ Netlify = https://userformprabhat.netlify.app/
 
 
 
+![Output](https://github.com/Prabhatlodhi/Assignment/assets/114669921/fd9952b7-57be-4130-9718-b4a732d8563d)
+
+ 
+
 ## About Me
 
 Hello! 👋 I'm Prabhat, and I'm passionate about building user-friendly and visually appealing web applications. One of my recent projects is a userform that allows users to input their information and hobbies, with an amazing UI design and support for both dark and light modes.
 
 ### Project Highlights
 
-- **User Input**: The userform I built is capable of capturing various user inputs, such as username, country selection, and multiple hobbies.
-- **UI Design**: I've focused on creating an engaging and visually appealing user interface for the form, ensuring an enjoyable user experience.
-- **Dark and Light Modes**: To enhance the user experience and accommodate user preferences, the userform includes support for both dark and light modes. Users can seamlessly switch between the two modes with a simple click.
+- User Input Capture: The userform is designed to capture various user inputs, including username, country selection, and multiple hobbies. Users can easily provide their information through the form.
+
+- Engaging UI Design: Special attention has been given to creating an engaging and visually appealing user interface for the form. The design elements are carefully chosen to enhance the overall user experience.
+
+- Dark and Light Modes: The userform offers support for both dark and light modes. This feature allows users to customize the appearance of the form based on their preferences. With a simple click, users can seamlessly switch between the two modes.
+
+- Responsive Design: The userform is optimized for different devices, including the iPad Mini and iPhone SE. It ensures that the form displays properly and is fully functional on these specific devices, providing a consistent user experience.
 
 ### Technologies Used
 
