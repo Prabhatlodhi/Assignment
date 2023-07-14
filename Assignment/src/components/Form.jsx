@@ -16,7 +16,7 @@ const Form = () => {
   const [darkmode, setDarkMode] = useState(false);
   const [showHobbyInput, setshowHobbyInput] = useState(false);
 
-  //for storing the data-input by the user in Array
+  //for storing the user-data in Array
   const updateData = () => {
     const update = [
       ...formData,
@@ -69,6 +69,7 @@ const Form = () => {
     }
   };
 
+  //for consoleing the data
   useEffect(() => {
     console.log(formData);
   }, [formData]);
@@ -190,7 +191,7 @@ const Form = () => {
               </button>
             </div>
             <br />
-            {/* Hobby input field toggles */}
+            {/* Hobby input field toggle */}
             {showHobbyInput && (
               <div>
                 <input
@@ -203,7 +204,7 @@ const Form = () => {
                 <button onClick={submitHobbies}>Add </button>
               </div>
             )}
-            {/* rendering list of hobbied */}
+            {/* rendering list of hobbies */}
             {hobbies.map((hobby, id) => {
               return (
                 <div key={id}>

@@ -139,7 +139,7 @@ b {
   font-size: 16px;
   border-radius: 50%;
 }
-/*==== i pad mini ====*/
+/*==================== i pad mini ====================*/
 @media (max-width: 769px) {
   .main_wrapper {
     width: 100vw;
@@ -187,7 +187,7 @@ b {
   }
 }
 
-/* i phone SE */
+/*======================== i phone SE ==================*/
 @media (max-width: 376px) {
   .main_wrapper {
     width: 100%;
